@@ -63,3 +63,4 @@ def review(employer_id, methods=['GET', 'POST']):
         execute_sql('INSERT INTO review (review, rating, title, date, status, employer_id) VALUES (?, ?, ?, ?, ?, ?)', (review, rating, title, date, status, employer_id), commit = True)
         render_template('review.html', employer_id=employer_id)
         return redirect(url_for('employer', employer_id=employer_id))
+    return render_template('review.html', employer_id=employer_id)
